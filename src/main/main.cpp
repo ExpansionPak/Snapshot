@@ -331,8 +331,14 @@ extern RspUcodeFunc njpgdspMain;
 extern RspUcodeFunc aspMain;
 
 RspUcodeFunc* get_rsp_microcode(const OSTask* task) {
-    (void)task;
-    return nullptr;
+    switch (task->t.type) {
+    case M_AUDTASK:
+        return aspMain;
+
+    default:
+        fprintf(stderr, "Unknown task: %" PRIu32 "\n", task->t.type);
+        return nullptr;
+    }
 }
 
 extern "C" void recomp_entrypoint(uint8_t * rdram, recomp_context * ctx);

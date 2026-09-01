@@ -17,3 +17,26 @@ ignored = [
     "aspMainTextStart",
     "gspF3DEX2_NoN_fifoTextStart"
 ]
+
+[[patches.hook]]
+func = "dmaLoadOverlay"
+text = "    load_overlays(MEM_W(0, ctx->r4), MEM_W(0x8, ctx->r4), (uint32_t)(MEM_W(0x4, ctx->r4) - MEM_W(0x0, ctx->r4)));"
+
+# Changes reading a hardware register into a call to the equivalent libultra function
+[[patches.hook]]
+func = "auThreadMain"
+text = "    osAiGetLength_recomp(rdram, ctx);"
+before_vram = 0x800219DC
+[[patches.instruction]]
+func = "auThreadMain"
+vram = 0x800219DC
+value = 0x0040C825 # move $t9, $v0
+
+[[patches.hook]]
+func = "auThreadMain"
+text = "    osAiGetLength_recomp(rdram, ctx);"
+before_vram = 0x80022278
+[[patches.instruction]]
+func = "auThreadMain"
+vram = 0x80022278
+value = 0x00407025 # move $t6, $v0
