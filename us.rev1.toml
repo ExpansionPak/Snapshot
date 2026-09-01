@@ -1,0 +1,19 @@
+# Config file for Pokémon Snap NTSC 1.0 Recompilation.
+
+[input]
+entrypoint = 0x80000400
+output_func_path = "RecompiledFuncs"
+symbols_file_path = "dump.toml"
+# elf_path = "pokemonsnap.elf"
+rom_file_path = "pokemonsnap.z64"
+
+[patches]
+stubs = [
+    "check_sp_imem",
+    "check_sp_dmem",
+]
+
+ignored = [
+    "aspMainTextStart",
+    "gspF3DEX2_NoN_fifoTextStart"
+]
