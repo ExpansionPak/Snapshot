@@ -1,5 +1,5 @@
-# Zelda 64: Recompiled
-Zelda 64: Recompiled is a project that uses [N64: Recompiled](https://github.com/Mr-Wiseguy/N64Recomp) to **statically recompile** Majora's Mask (and soon Ocarina of Time) into a native port with many new features, enhancements, and extensive mod support. This project uses [RT64](https://github.com/rt64/rt64) as the rendering engine to provide graphical enhancements.
+# Snapshot
+Snapshot is a project that uses [N64: Recompiled](https://github.com/Mr-Wiseguy/N64Recomp) to **statically recompile** Pokémon Snap (N64, 1999) into a native port with many new features, enhancements, and extensive mod support. This project uses [RT64](https://github.com/rt64/rt64) as the rendering engine to provide graphical enhancements.
 
 ### [Check out the latest release here](https://github.com/Mr-Wiseguy/Zelda64Recomp/releases/latest).
 
@@ -135,7 +135,7 @@ You'll probably also want to change the default behavior so that you don't need 
 - macOS: `~/Library/Application Support/Zelda64Recompiled/saves`
 
 #### How do I choose a different ROM?
-**You don't.** This project is **only** a port of Majora's Mask (and Ocarina of Time in the future), and it will only accept one specific ROM: the US version of the N64 release of Majora's Mask. ROMs in formats other than .z64 will be automatically converted, as long as it is the correct ROM. **It is not an emulator and it cannot run any arbitrary ROM.**
+**You don't.** This project is **only** a port of Pokémon Snap, and it will only accept one specific ROM: the US version of the N64 release of Pokémon Snap. ROMs in formats other than .z64 will be automatically converted, as long as it is the correct ROM. **It is not an emulator and it cannot run any arbitrary ROM.**
 
 Instead, you can change the game by installing mods. See the [mod support](#mod-support) section for details.
 
@@ -158,5 +158,5 @@ Building is not required to play this project, as prebuilt binaries (which do no
 * [FreeType](https://freetype.org/) for font rendering, used by RmlUi  
 * [moodycamel::ConcurrentQueue](https://github.com/cameron314/concurrentqueue) for semaphores and fast, lock-free MPMC queues
 * [Gamepad Motion Helpers](https://github.com/JibbSmart/GamepadMotionHelpers) for sensor fusion and calibration algorithms to implement gyro aiming
-* [Majora's Mask Decompilation](https://github.com/zeldaret/mm) for headers and some function definitions, used for making patches or some enhancements
+* [Pokémon Snap Decompilation](https://github.com/ethteck/pokemonsnap) for headers and some function definitions, used for making patches or some enhancements
 * [Ares emulator](https://github.com/ares-emulator/ares) for RSP vector instruction reference implementations, used in RSP recompilation
