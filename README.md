@@ -1,6 +1,9 @@
 # Snapshot
 Snapshot is a project that uses [N64: Recompiled](https://github.com/Mr-Wiseguy/N64Recomp) to **statically recompile** Pokémon Snap (N64, 1999) into a native port with many new features, enhancements, and extensive mod support. This project uses [RT64](https://github.com/rt64/rt64) as the rendering engine to provide graphical enhancements.
 
+> [!IMPORTANT]
+> This recomp is (currently) in a very unfinished state. While the first few parts of the game have already been verified to be playable, there are still some fixes needed for the recomp enhancements (e.g, widescreen, interpolation). Until then, this recomp is not recommended for casual gaming.
+
 ### [Check out the latest release here](https://github.com/Mr-Wiseguy/Zelda64Recomp/releases/latest).
 
 Join the [N64: Recompiled Community Discord](https://discord.gg/AWZThJ4dPf) to discuss this and other N64: Recompiled projects!

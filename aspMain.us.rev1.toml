@@ -1,5 +1,5 @@
 text_offset = 0x3E580
-text_size = 0xE30
+text_size = 0xE20
 text_address = 0x04001080
 rom_file_path = "pokemonsnap.z64"
 output_file_path = "rsp/aspMain.cpp"

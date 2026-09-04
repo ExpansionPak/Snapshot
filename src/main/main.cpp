@@ -327,7 +327,6 @@ void reset_audio(uint32_t output_freq) {
     update_audio_converter();
 }
 
-extern RspUcodeFunc njpgdspMain;
 extern RspUcodeFunc aspMain;
 
 RspUcodeFunc* get_rsp_microcode(const OSTask* task) {
