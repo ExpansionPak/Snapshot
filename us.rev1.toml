@@ -7,6 +7,12 @@ symbols_file_path = "dump.toml"
 # elf_path = "pokemonsnap.elf"
 rom_file_path = "pokemonsnap.z64"
 
+manual_funcs = [
+    { name = "_sndpVoiceHandler", section = ".main", vram = 0x8002966C, size = 0x5A4 },
+    { name = "__CSPVoiceHandler", section = ".main", vram = 0x8002E2F8, size = 0x6F0},
+    { name = "proutSprintf", section = ".main", vram = 0x800374B0, size = 0x24 }
+]
+
 [patches]
 stubs = [
     "check_sp_imem",
