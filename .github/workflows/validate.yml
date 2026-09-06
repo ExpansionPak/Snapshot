@@ -89,7 +89,7 @@ jobs:
           cp extra/* .
 
           ./N64Recomp us.rev1.toml
-          /RSPRecomp aspMain.us.rev1.toml
+          ./RSPRecomp aspMain.us.rev1.toml
       - name: Build Zelda64Recompiled
         run: |-
           # enable ccache
@@ -173,7 +173,7 @@ jobs:
           cp extra/* .
 
           ./N64Recomp us.rev1.toml
-          /RSPRecomp aspMain.us.rev1.toml
+          ./RSPRecomp aspMain.us.rev1.toml
       - name: Build Zelda64Recompiled
         run: |-
           # enable ccache
@@ -302,7 +302,7 @@ jobs:
           cp extra/* .
 
           ./N64Recomp us.rev1.toml
-          /RSPRecomp aspMain.us.rev1.toml
+          ./RSPRecomp aspMain.us.rev1.toml
       - name: Build Zelda64Recompiled
         run: |-
           # enable ccache
@@ -397,7 +397,7 @@ jobs:
           cp extra/* .
 
           ./N64Recomp us.rev1.toml
-          /RSPRecomp aspMain.us.rev1.toml
+          ./RSPRecomp aspMain.us.rev1.toml
       - name: Build Zelda64Recompiled
         run: |-
           # enable ccache
