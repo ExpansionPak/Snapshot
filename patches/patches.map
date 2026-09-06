@@ -1,0 +1,74 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 RAMBASE = 0x80801000
+       0        0        0     1 PATCH_RAM_END = 0x81000000
+80801000        0        0    16 .text
+80801000        0        0    16         fadePatch.o:(.text)
+80801000        0      490     4 .recomp_patch
+80801000        0      490     4         fadePatch.o:(.recomp_patch)
+80801000        0      248     1                 func_800A750C
+80801248      248      248     1                 func_800A7A58
+80801490      490       20     8 .rodata
+80801490      490       14     4         <internal>:(.rodata.cst4)
+808014a8      4a8        8     8         <internal>:(.rodata.cst8)
+808014b0 808014b0        0    16 .data
+808014b0 808014b0        0    16         fadePatch.o:(.data)
+808014b0 808014b0        0    16 .bss
+808014b0 808014b0        0    16         fadePatch.o:(.bss)
+808014b0 808014b0        0     1 
+       0        0      510     4 .symtab
+       0        0      510     4         <internal>:(.symtab)
+       0        0      5bf     1 .strtab
+       0        0      5bf     1         <internal>:(.strtab)
+       0        0       54     1 .shstrtab
+       0        0       54     1         <internal>:(.shstrtab)
+808014b0 808014b0        0     1 __start = 0x80000000
+808014b0 808014b0        0     1 recomp_puts = 0x8F000000
+808014b0 808014b0        0     1 recomp_exit = 0x8F000004
+808014b0 808014b0        0     1 osRecvMesg_recomp = 0x8F000010
+808014b0 808014b0        0     1 osSendMesg_recomp = 0x8F000014
+808014b0 808014b0        0     1 recomp_get_gyro_deltas = 0x8F000018
+808014b0 808014b0        0     1 recomp_get_target_aspect_ratio = 0x8F00001C
+808014b0 808014b0        0     1 recomp_get_pending_warp = 0x8F000020
+808014b0 808014b0        0     1 recomp_powf = 0x8F000024
+808014b0 808014b0        0     1 recomp_get_target_framerate = 0x8F000028
+808014b0 808014b0        0     1 recomp_get_targeting_mode = 0x8F00002C
+808014b0 808014b0        0     1 recomp_get_bgm_volume = 0x8F000030
+808014b0 808014b0        0     1 recomp_get_low_health_beeps_enabled = 0x8F000034
+808014b0 808014b0        0     1 __sinf_recomp = 0x8F000038
+808014b0 808014b0        0     1 __cosf_recomp = 0x8F00003C
+808014b0 808014b0        0     1 osCreateMesgQueue_recomp = 0x8F000048
+808014b0 808014b0        0     1 recomp_set_current_frame_poll_id = 0x8F00004C
+808014b0 808014b0        0     1 recomp_time_us = 0x8F000050
+808014b0 808014b0        0     1 recomp_measure_latency = 0x8F000054
+808014b0 808014b0        0     1 osViGetCurrentFramebuffer_recomp = 0x8F000058
+808014b0 808014b0        0     1 osFlashWriteArray_recomp = 0x8F000060
+808014b0 808014b0        0     1 osFlashWriteBuffer_recomp = 0x8F000064
+808014b0 808014b0        0     1 osWritebackDCache_recomp = 0x8F000068
+808014b0 808014b0        0     1 recomp_get_pending_set_time = 0x8F00006C
+808014b0 808014b0        0     1 osContStartReadData_recomp = 0x8F000070
+808014b0 808014b0        0     1 osContGetReadData_recomp = 0x8F000074
+808014b0 808014b0        0     1 osContStartQuery_recomp = 0x8F000078
+808014b0 808014b0        0     1 osContGetQuery_recomp = 0x8F00007C
+808014b0 808014b0        0     1 recomp_get_mouse_deltas = 0x8F000080
+808014b0 808014b0        0     1 osGetTime_recomp = 0x8F000088
+808014b0 808014b0        0     1 recomp_get_autosave_enabled = 0x8F00008C
+808014b0 808014b0        0     1 recomp_load_overlays = 0x8F000090
+808014b0 808014b0        0     1 osInvalICache_recomp = 0x8F000094
+808014b0 808014b0        0     1 recomp_get_analog_cam_enabled = 0x8F000098
+808014b0 808014b0        0     1 recomp_get_camera_inputs = 0x8F00009C
+808014b0 808014b0        0     1 recomp_set_right_analog_suppressed = 0x8F0000A0
+808014b0 808014b0        0     1 recomp_get_inverted_axes = 0x8F0000A4
+808014b0 808014b0        0     1 recomp_high_precision_fb_enabled = 0x8F0000A8
+808014b0 808014b0        0     1 recomp_get_resolution_scale = 0x8F0000AC
+808014b0 808014b0        0     1 recomp_get_analog_inverted_axes = 0x8F0000B0
+808014b0 808014b0        0     1 recomp_get_window_resolution = 0x8F0000B4
+808014b0 808014b0        0     1 recomp_run_ui_callbacks = 0x8F0000B8
+808014b0 808014b0        0     1 recomp_register_actor_extension = 0x8F0000BC
+808014b0 808014b0        0     1 recomp_register_actor_extension_generic = 0x8F0000C0
+808014b0 808014b0        0     1 recomp_clear_all_actor_data = 0x8F0000C4
+808014b0 808014b0        0     1 recomp_create_actor_data = 0x8F0000C8
+808014b0 808014b0        0     1 recomp_destroy_actor_data = 0x8F0000CC
+808014b0 808014b0        0     1 recomp_get_actor_data = 0x8F0000D0
+808014b0 808014b0        0     1 recomp_get_actor_spawn_index = 0x8F0000D4
+       0        0      1d0     4 .rel.recomp_patch
+       0        0      1d0     4         fadePatch.o:(.rel.recomp_patch)

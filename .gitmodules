@@ -20,3 +20,6 @@
 	path = Zelda64RecompSyms
 	url = https://github.com/Zelda64Recomp/Zelda64RecompSyms
 
+[submodule "lib/pokemonsnap"]
+	path = lib/pokemonsnap
+	url = https://github.com/ethteck/pokemonsnap.git
