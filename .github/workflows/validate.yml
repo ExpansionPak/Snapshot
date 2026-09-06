@@ -1,5 +1,9 @@
 name: validate
 on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
   workflow_call:
     inputs:
       SDL2_VERSION:
