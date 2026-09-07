@@ -64,9 +64,6 @@ If you have issues with crashes on startup, make sure your graphics drivers are 
 #### Plug and Play
 Simply provide your copy of the North American version of the game in the main menu and start playing! This project will automatically load assets from the provided copy, so there is no need to go through a separate extraction step or build the game yourself. Other versions of the game may be supported in the future.
 
-#### Fully Intact N64 Effects
-A lot of care was put into RT64 to make sure all graphical effects were rendered exactly as they did originally on the N64. No workarounds or "hacks" were made to replicate these effects, with the only modifications to them being made for enhancement purposes such as widescreen support. This includes framebuffer effects like the grayscale cutscenes and the Deku bubble projectile, depth effects like the lens of truth, decals such as shadows or impact textures, accurate lighting, shading effects like the fire arrows and bomb explosions, and various textures that are often rendered incorrectly.
-
 #### Easy-to-Use Menus
 Gameplay settings, graphics settings, input mappings, and audio settings can all be configured with the in-game config menu. The menus can all be used with mouse, controller, or keyboard for maximum convenience.
 
@@ -113,7 +110,6 @@ A Linux binary as well as a Flatpak is available for playing on most up-to-date 
 To play on Steam Deck, extract the Linux build onto your deck. Then, in desktop mode, right click the Zelda64Recompiled executable file and select "Add to Steam". From there, you can return to Gaming mode and configure the controls as needed. See the [Steam Deck gyro aim FAQ section](#how-do-i-set-up-gyro-aiming-on-steam-deck) for more detailed instructions.
 
 ## Planned Features
-* Ocarina of Time support
 * Ray Tracing and Higher Quality Model Replacements (via RT64)
 * Multi-language support with support for loading custom translations
 
