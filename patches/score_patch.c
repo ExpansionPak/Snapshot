@@ -5,12 +5,12 @@
 #include "app_render.h"
 #include "photo_check/photo_check.h"
 
-u16 score_PokemonCount;
-s32 score_PixelCount[12];
-s32 score_PixelCountUnobstructed[12];
-s32 score_ApproxTotalPixelCount[12];
-s32 score_PixelCountInCenter[12];
-ScoreData D_800BE170;
+extern u16 score_PokemonCount;
+extern s32 score_PixelCount[12];
+extern s32 score_PixelCountUnobstructed[12];
+extern s32 score_ApproxTotalPixelCount[12];
+extern s32 score_PixelCountInCenter[12];
+extern ScoreData D_800BE170;
 
 void score_CalculateScore(ScoreData* score, PhotoData* photo, s32 id);
 
@@ -20,7 +20,6 @@ RECOMP_PATCH struct ScoreData* func_800A0EA4(GObj* camera, PhotoData* photo, u16
     s32 i;
     s32 targetSlot = -1;
     f32 minDistance = 999999.0f;
-
     D_800BE170.totalScore = 0;
     D_800BE170.pokemonInFocus = 0;
     D_800BE170.specialID = 0;
@@ -32,7 +31,7 @@ RECOMP_PATCH struct ScoreData* func_800A0EA4(GObj* camera, PhotoData* photo, u16
     D_800BE170.isWellFramed = 0;
     D_800BE170.samePkmnBonus = 0;
     D_800BE170.samePkmnNumber = 0;
-    
+
     f32 camEyeX = photo->unk_08.x;
     f32 camEyeY = photo->unk_08.y;
     f32 camEyeZ = photo->unk_08.z;
@@ -61,7 +60,7 @@ RECOMP_PATCH struct ScoreData* func_800A0EA4(GObj* camera, PhotoData* photo, u16
         f32 dz = photo->pokemons[i].position.z - camEyeZ;
         f32 dist = sqrtf(dx * dx + dy * dy + dz * dz);
 
-        if (dist < 50.0f || dist > 12000.0f) {
+        if (dist < 30.0f || dist > 15000.0f) {
             continue;
         }
 
@@ -72,21 +71,29 @@ RECOMP_PATCH struct ScoreData* func_800A0EA4(GObj* camera, PhotoData* photo, u16
         f32 dot = (fwdX * dirX) + (fwdY * dirY) + (fwdZ * dirZ);
 
         // Subject is in front of the lens
-        if (dot > 0.707f) {
+        if (dot > 0.65f) {
             s32 slot = score_PokemonCount++;
             photo_PokemonIndexes[slot] = i;
 
-            // Near = ~600px, Far = ~100px (max score cap is 768)
-            s32 simulatedPixels = (s32)(1200.0f - (dist * 0.25f));
+            // Distance curve:
+            // ~500 units away  => ~720 pixels (huge size score ~900-1000)
+            // ~1500 units away => ~500 pixels (medium size score ~650)
+            // ~3500 units away => ~250 pixels (small size score ~350)
+            f32 normDist = (dist - 400.0f) / 4000.0f;
+            if (normDist < 0.0f) normDist = 0.0f;
+            if (normDist > 1.0f) normDist = 1.0f;
+
+            s32 simulatedPixels = (s32)(750.0f - (normDist * 550.0f));
             if (simulatedPixels > 768) simulatedPixels = 768;
-            if (simulatedPixels < 40)  simulatedPixels = 40;
+            if (simulatedPixels < 80)  simulatedPixels = 80;
 
             score_PixelCount[slot] = simulatedPixels;
             score_PixelCountUnobstructed[slot] = simulatedPixels;
+            
             score_ApproxTotalPixelCount[slot] = simulatedPixels;
 
-            // Reticle center alignment test (~12 degree cone)
-            if (dot > 0.975f) {
+            // Reticle center alignment (within center ring: dot > 0.96)
+            if (dot > 0.96f) {
                 score_PixelCountInCenter[slot] = 4;
             } else {
                 score_PixelCountInCenter[slot] = 0;
