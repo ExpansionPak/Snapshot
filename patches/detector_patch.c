@@ -30,12 +30,17 @@ RECOMP_PATCH void renDrawSprite(GObj* arg0) {
             gDPSetRenderMode(gMainGfxPos[0]++, G_RM_AA_OPA_SURF, G_RM_AA_OPA_SURF2);
             gDPSetCombineMode(gMainGfxPos[0]++, G_CC_PRIMITIVE, G_CC_PRIMITIVE);
             gDPSetPrimColor(gMainGfxPos[0]++, 0, 0, 255, 0, 0, 255);
-            
+
             gDPFillRectangle(gMainGfxPos[0]++, 158, 117, 161, 118);
             gDPFillRectangle(gMainGfxPos[0]++, 157, 118, 162, 121);
             gDPFillRectangle(gMainGfxPos[0]++, 158, 121, 161, 122);
 
+            // Restore RDP state for the HUD sprites
             gDPPipeSync(gMainGfxPos[0]++);
+            gDPSetCycleType(gMainGfxPos[0]++, G_CYC_1CYCLE);
+            gDPSetRenderMode(gMainGfxPos[0]++, G_RM_XLU_SURF, G_RM_XLU_SURF2);
+            gDPSetCombineMode(gMainGfxPos[0]++, G_CC_DECALRGBA, G_CC_DECALRGBA);
+            gDPSetTexturePersp(gMainGfxPos[0]++, G_TP_NONE);
         }
     }
 }
